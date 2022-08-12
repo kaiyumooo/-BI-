@@ -1,0 +1,41 @@
+GET 127.0.0.1:9001/api/v1/dataset/list​
+Content-Type: application/json​
+​
+Request Payload:​
+{​
+    "orderBy":"createTime", //排序字段​
+    "order":"desc", //排序方式​
+    "page":1, //页码​
+    "pageSize":10, //页大小​
+    "createUser":"xxx",//创建用户​
+    "keyword":"zzp" // 数据集名称或者数据集descr关键词搜索    ​
+}​
+​
+Response​
+{​
+    "data":{​
+        "dataSetList": [​
+            {​
+                "createTime":"2022-06-11 09:26:10", //创建时间​
+                "name":"数据集名称",​
+                "descr":"数据集描述",​
+                "dataSourceType":"click_house", //数据源类型​
+                "dbName":"数据库名",​
+                "tableName":"表名",​
+                "schema":[​
+                    {​
+                        "name":"字段", //字段名称​
+                        "type":"String",  //字段类型​
+                        "descr":"字段描述", //字段描述​
+                        "isPartition":true //是否是分区字段​
+                    }​
+                ],​
+                "id":"111", //数据集id​
+                "createUser":"xxx", //创建者​
+            }​
+        ],​
+        "totalCount":11​
+    }, ​
+    "msg":"success",​
+    "code":0  ​
+}
