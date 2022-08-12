@@ -1,0 +1,14 @@
+POST 127.0.0.1:9001/api/v1/dataset/delete​
+Content-Type: application/json​
+​
+Request Payload:​
+{​
+    "id":11 //数据集id​
+}​
+​
+Response​
+{​
+    "data":true,​
+    "msg":"success",​
+    "code":0  ​
+}
