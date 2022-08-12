@@ -1,0 +1,29 @@
+POST 127.0.0.1:9001/api/v1/dataset/create​
+Content-Type: application/json​
+​
+Request Payload:​
+{​
+    "name":"数据集名称",​
+    "descr":"数据集描述",​
+    "dataSourceType":"click_house", //数据源类型​
+    "dbName":"数据库名",​
+    "tableName":"表名",​
+    "schema":[​
+        {​
+            "name":"字段", //字段名称​
+            "type":"String",  //字段类型​
+            "descr":"字段描述", //字段描述​
+            "isPartition":true //是否是分区字段​
+        }​
+    ],​
+    "createUser":"xx"  //创建用户​
+}​
+​
+Response​
+{​
+    "data":{​
+        "dataSetId":123 //数据集id​
+    }, ​
+    "msg":"success",​
+    "code":0  ​
+}
