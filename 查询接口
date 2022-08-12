@@ -1,0 +1,49 @@
+POST 127.0.0.1:9001/api/v1/query​
+Content-Type: application/json​
+​
+Request Payload:​
+{​
+    "dataSetId":123, //数据集id​
+    "cache":true, //是否走缓存​
+    "selectList":[​
+        {​
+            "function":"sum", //方法枚举​
+            "field":"risk_cnt" //具体字段​
+        }​
+    ],​
+    "whereList":[​
+        {​
+            "field":"risk_id",​
+            "op":"in", //操作符​
+            "joiner":"and", //多个条件连接符​
+            "valueList":["1","2"]​
+        }​
+    ],​
+    "groupByList":["risk_level"],//​
+    "sort":[​
+        {​
+            "field":"risk_cnt",​
+            "order":"desc"​
+        }​
+    ]​
+}​
+​
+Response​
+{​
+    "data":{​
+        "cost":100, //查询时间​
+        "sql":"select **", //查询sql​
+        "data":[​
+            {​
+                "key":"risk_level", //列名​
+                "value":"xx"  //具体值​
+            },​
+            {​
+                "key":"risk_cnt",​
+                "value":"111"​
+            }​
+        ]​
+    }, ​
+    "msg":"success",​
+    "code":0  ​
+}
