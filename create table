@@ -1,0 +1,17 @@
+CREATE TABLE `data_set` (​
+  `id` bigint unsigned NOT NULL AUTO_INCREMENT COMMENT 'id',​
+  `app_id` bigint unsigned DEFAULT NULL COMMENT '项目id',​
+  `name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '数据集名称',​
+  `descr` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '数据集描述',​
+  `data_source_type` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '数据源类型',​
+  `db_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '数据库名称',​
+  `table_name` varchar(100) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '表名',​
+  `schema` text DEFAULT NULL COMMENT '表的元信息',​
+  `create_user` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '创建人',​
+  `update_user` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci DEFAULT NULL COMMENT '修改人',​
+  `create_time` bigint DEFAULT '0' COMMENT '创建时间',​
+  `update_time` bigint DEFAULT '0' COMMENT '修改时间',​
+  `status` int DEFAULT '0' COMMENT '是否删除 0-否 1-是',​
+  PRIMARY KEY (`id`),​
+  KEY `idx_app_id` (`app_id`)​
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci COMMENT='数据集表'
