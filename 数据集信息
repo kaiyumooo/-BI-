@@ -1,0 +1,41 @@
+GET 127.0.0.1:9001/api/v1/dataset/info​
+Content-Type: application/json​
+​
+Request Payload:​
+{​
+    "dateSetId":123 //数据集id  ​
+}​
+​
+Response​
+{​
+    "data":{​
+        "dimensionList":[​
+            {​
+                "name":"字段", //字段名称​
+                "type":"String",  //字段类型​
+                "descr":"字段描述", //字段描述​
+                "isPartition":true //是否是分区字段​
+            }​
+        ],​
+        "metricList":[​
+            {​
+                "name":"字段", //字段名称​
+                "type":"int",  //字段类型​
+                "descr":"字段描述", //字段描述​
+                "isPartition":false //是否是分区字段​
+            }​
+        ],​
+        "functionList":[​
+            {​
+                "name":"求和",​
+                "value":"sum"​
+            },​
+            {​
+                "name":"最大值",​
+                "value":"max"​
+            }​
+        ]​
+    }, ​
+    "msg":"success",​
+    "code":0  ​
+}
