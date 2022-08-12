@@ -1,0 +1,19 @@
+GET 127.0.0.1:9001/api/v1/table/list​
+Content-Type: application/json​
+​
+Request Payload:​
+{​
+    "dataSourceType":"click_house", //数据源类型​
+    "dbName":"数据库A"  //数据库名​
+}​
+​
+Response​
+{​
+    "data":[​
+        {​
+            "tableName":"表名"​
+        }​
+    ],  ​
+    "msg":"success",​
+    "code":0  ​
+}
