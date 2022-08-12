@@ -1,0 +1,23 @@
+POST 127.0.0.1:9001/api/v1/table/schema​
+Content-Type: application/json​
+​
+Request Payload:​
+{​
+    "dataSourceType":"click_house",​
+    "dbName":"数据库A",​
+    "tableName":"表-A"​
+}​
+​
+Response​
+{​
+    "data":[​
+        {​
+            "name":"字段", //字段名称​
+            "type":"String",  //字段类型​
+            "descr":"字段描述", //字段描述​
+            "isPartition":true //是否是分区字段​
+        }​
+    ],  ​
+    "msg":"success",​
+    "code":0  ​
+}
